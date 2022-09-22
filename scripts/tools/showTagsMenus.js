@@ -71,6 +71,12 @@ export default function showTagsMenu(recipes) {
                 targetDOM.style.maxHeight = 'unset'
                 target.lastElementChild.style.overflowY = 'hidden'
                 target.lastElementChild.style.display = 'none'
+
+                // Reset tags search
+                let childs = Array.from(target.lastElementChild.children);
+                childs.forEach(child => {
+                    child.style.display = 'flex'
+                });
             }
         }); 
     });
