@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +14,8 @@
             crossorigin="anonymous"
         />
         <link rel="icon" href="./assets/icon.png" />
-        <script src="./scripts/script.js" type="module" defer></script>
-        <script src="./scripts/tools/tagsSorter.js" type="module" defer></script>
+        <script src="./scripts/script.js" type="module"></script>
+        <script src="./scripts/tools/tagsSorter.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -26,19 +26,19 @@
                     <!-- tags (Tags.js) -->
                 </div>
                 <div class="selectFrame">
-                    <div class="selectInputFrame" name="ingredients" id="ingredientsSelect" show="false">
+                    <div class="selectInputFrame" id="ingredientsSelect">
                         <span class="selectTitle" id="ingredients">Ingredients</span>
                         <div class="selectItemFrame" id="ingrediantsList">
                             <!-- ingredientsItems (IngredientsItems.js) -->
                         </div>
                     </div>
-                    <div class="selectInputFrame" name="Appareils" id="appareilsSelect" show="false">
+                    <div class="selectInputFrame" id="appareilsSelect">
                         <span class="selectTitle" id="appareils">Appareils</span>
                         <div class="selectItemFrame" id="appliancesList">
                             <!-- appliancesItems (AppliancesItems.js) -->
                         </div>
                     </div>
-                    <div class="selectInputFrame" name="Ustensiles" id="ustensilesSelect" show="false">
+                    <div class="selectInputFrame" id="ustensilesSelect">
                         <span class="selectTitle" id="ustensiles">Ustensiles</span>
                         <div class="selectItemFrame" id="utensilsList">
                             <!-- utensilsItems (UtensilsItems.js) -->
@@ -47,9 +47,8 @@
                 </div>
             </div>
         </header>
-        <section id="recettesList">
+        <div id="recettesList">
             <!-- recetteItems (Cards.js) -->
-        </section>
-        <script src="" async defer></script>
+        </div>
     </body>
 </html>

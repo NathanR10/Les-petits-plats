@@ -200,7 +200,7 @@ ul {
     border-radius: 5px;
 }
 
-section {
+#recettesList {
     margin-top: 27.5px;
     width: calc(100% - 160px);
     display: flex;
