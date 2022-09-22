@@ -19,8 +19,14 @@ export default function tagsSorter(recipes) {
             ingredients.push(ingredient.ingredient.toLowerCase())
         });
 
+        // regroup all ustensils for one recipe
+        const ustensils = []
+        recipe.ustensils.forEach(ustensil => {
+            ustensils.push(ustensil.toLowerCase())
+        });
+
         // setup our targets
-        const targetName = [recipe.name.toLowerCase(), ...ingredients, recipe.description.toLowerCase()]
+        const targetName = [recipe.name.toLowerCase(), ...ingredients, ...ustensils, recipe.description.toLowerCase(), recipe.appliance.toLowerCase()]
 
         // test all tag for the recipe
         var matchingTagsCount = 0
