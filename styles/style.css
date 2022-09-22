@@ -1,0 +1,310 @@
+::-webkit-scrollbar-track {
+    background-color: #ffffff50;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff ;
+}
+
+::selection{
+    background-color: #666;
+    color: #1E1E1E;
+    font-weight: bold;
+}
+
+/* Firefox */
+::-moz-selection {
+    background-color: #1E1E1E;
+    color: #ffffff ;
+    font-weight: bold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lato';
+}
+
+header {
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.logo {
+    width: 268px;
+    margin-top: 42px;
+}
+
+.searchFrame {
+    width: 100%;
+    margin-top: 17px;
+}
+
+.searchButton {
+    width: calc(100% - 48px);
+    height: 21px;
+    border: unset;
+    margin: unset;
+    padding: 24px;
+    background-color: #E7E7E7;
+    border-radius: 5px;
+    background-image: url('../assets/search.png');
+    background-position: 98.75%;
+    background-repeat: no-repeat;
+    font-size: 1.09rem;
+}
+
+#tagsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tagFrame {
+    padding: 9px 20px;
+    background-color: #aaaaaa;
+    border-radius: 5px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tagFrame:hover {
+    opacity: 0.85;
+}
+
+.tagName {
+    color: white;
+    font-size: 14px;
+    margin-right: 13px;
+}
+
+.tagClose {
+    height: 20px;
+    width: 20px;
+}
+
+.selectFrame {
+    margin-top: 15px;
+    display: flex;
+    cursor: pointer;
+}
+
+.selectInputFrame {
+    padding: 23px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    border: unset;
+    width: 170px;
+    height: 22px;
+    background-image: url("../assets/arrow_dropdown.png");
+    background-repeat: no-repeat;
+    background-size: 17px;
+    background-position: calc(100% - 20px) 25px;
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    overflow: hidden;
+}
+
+.selectInputFrame:nth-child(1) {
+    margin-right: 18px;
+}
+
+.selectInputFrame:nth-child(3) {
+    margin-left: 18px;
+}
+
+.selectInputFrame:nth-child(1) {
+    background-color: #3282F7;
+}
+
+.selectInputFrame:nth-child(2) {
+    background-color: #68D9A4;
+}
+
+.selectInputFrame:nth-child(3) {
+    background-color: #ED6454;
+}
+
+.selectInput {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    line-height: 21.6px;
+    font-weight: 700;
+    text-shadow: none;
+    font-family: 'Lato';
+    font-style: normal;
+    color: white;
+}
+
+.selectInput:focus, .selectInput:focus{
+    outline: none;
+}
+.selectInput::placeholder {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    line-height: 21.6px;
+    font-weight: 700;
+    text-shadow: none;
+    color: white;
+    opacity: 0.5;
+}
+
+.selectItemFrame {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 27px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.selectItem {
+    width: 30%;
+    padding: 1.5%;
+    cursor: pointer;
+}
+
+.selectItem:hover {
+    background-color: #00000010;
+    border-radius: 5px;
+}
+
+section {
+    margin-top: 27.5px;
+    width: calc(100% - 160px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1439px) {
+    section {
+        justify-content: flex-start;
+    }
+    .recetteFrame:nth-last-child(1) {
+        margin-left: 20px !important;
+    }
+}
+
+.recetteFrame {
+    background-color: #e7e7e7;
+    width: 380px;
+    min-height: 342px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    margin: 0 20px 50px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.recetteFrame:nth-last-child(1) {
+    margin-left: 30px;
+    margin-right: auto;
+}
+
+.recetteFrameIsInView {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.recetteImg {
+    background-color: #c7bebe;
+    object-fit: scale-down;
+    object-position: center;
+    height: 180px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.recetteText {
+    padding: 0 20px;
+}
+
+.recetteTitleFrame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recetteTitle {
+    font-weight: bold;
+    color: black;
+    font-size: 1.1rem;
+    max-width: 70%;
+}
+
+.recetteDurationLogo {
+    font-size: 20px;
+}
+
+.recetteDuration {
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.recetteDetailsFrame {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5.75px;
+}
+
+.recetteDetailsList {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    line-height: 14px;
+}
+
+.recetteDetailsListItem {
+    font-size: 0.75rem;
+}
+
+.recetteDetailsDesc {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    line-height: 12px;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-family: 'Roboto';
+}

@@ -1,0 +1,25 @@
+{
+  "name": "les-petits-plats",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --ext .js,.jsx ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanR10/Les-petits-plats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NathanR10/Les-petits-plats/issues"
+  },
+  "homepage": "https://github.com/NathanR10/Les-petits-plats#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^8.22.0"
+  }
+}

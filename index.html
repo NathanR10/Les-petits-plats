@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Les petits plats</title>
+        <meta name="description" content="...">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        />
+        <link rel="icon" href="./assets/icon.png" />
+        <script src="./scripts/script.js" type="module" defer></script>
+        <script src="./scripts/tools/tagsSorter.js" type="module" defer></script>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="./assets/logo.png" alt="Les petits plats">
+            <div class="searchFrame">
+                <input id="searchBar" class="searchButton" type="text" placeholder="Rechercher une recette">
+                <div class="tagsList" id="tagsList">
+                    <!-- tags (Tags.js) -->
+                </div>
+                <div class="selectFrame">
+                    <div class="selectInputFrame" name="ingredients" id="ingredientsSelect" show="false">
+                        <span class="selectTitle" id="ingredients">Ingredients</span>
+                        <div class="selectItemFrame" id="ingrediantsList">
+                            <!-- ingredientsItems (IngredientsItems.js) -->
+                        </div>
+                    </div>
+                    <div class="selectInputFrame" name="Appareils" id="appareilsSelect" show="false">
+                        <span class="selectTitle" id="appareils">Appareils</span>
+                        <div class="selectItemFrame" id="appliancesList">
+                            <!-- appliancesItems (AppliancesItems.js) -->
+                        </div>
+                    </div>
+                    <div class="selectInputFrame" name="Ustensiles" id="ustensilesSelect" show="false">
+                        <span class="selectTitle" id="ustensiles">Ustensiles</span>
+                        <div class="selectItemFrame" id="utensilsList">
+                            <!-- utensilsItems (UtensilsItems.js) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="recettesList">
+            <!-- recetteItems (Cards.js) -->
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>
