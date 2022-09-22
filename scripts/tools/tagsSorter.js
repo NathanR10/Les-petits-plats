@@ -25,8 +25,6 @@ export default function tagsSorter(recipes) {
         // test all tag for the recipe
         var matchingTagsCount = 0
         tagsName.forEach(tag => {
-            console.log('=======');
-            console.log(tag);
 
             // search for matches between tag & targets
             const matches = targetName.find(el => el.includes(tag.toLowerCase()))
