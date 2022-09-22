@@ -1,92 +1,94 @@
-import { filter } from "../script.js"
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-nested-ternary */
+/* eslint-disable no-unused-expressions */
+// eslint-disable-next-line import/no-cycle, import/extensions
+import { filter } from '../script.js';
 
 export default function TagsItems() {
-    const menuTags = document.querySelectorAll('.selectItem')
+  const menuTags = document.querySelectorAll('.selectItem');
 
-    function listenTag(target) {
-        const tagItem = document.getElementById(target)
-        tagItem.addEventListener('click', function(e){
-            if (tagItem.attributes.active.value === 'true') {
-                tagItem.attributes.active.value = "false"
-                callbackTag(tagItem)
+  function listenTag(target) {
+    const tagItem = document.getElementById(target);
+    tagItem.addEventListener('click', () => {
+      if (tagItem.attributes.active.value === 'true') {
+        tagItem.attributes.active.value = 'false';
+        callbackTag(tagItem);
 
-                // refresh tags
-                filter('click')
-            } else {
-                tagItem.attributes.active.value = "true"
-                pushTag(tagItem)
+        // refresh tags
+        filter('click');
+      } else {
+        tagItem.attributes.active.value = 'true';
+        pushTag(tagItem);
 
-                // refresh tags
-                filter('click')
-            }
-        })
-    }
+        // refresh tags
+        filter('click');
+      }
+    });
+  }
 
-    function pushTag(tagItem) {
-
-        // set tag color
-        var tagColor = '#aaaaaa'
-        tagItem.id.split('_')[0] === 'ingredient'
-        ? tagColor = '#3282F7'
-        : tagItem.id.split('_')[0] === 'appliance'
+  function pushTag(tagItem) {
+    // set tag color
+    let tagColor = '#aaaaaa';
+    tagItem.id.split('_')[0] === 'ingredient'
+      ? tagColor = '#3282F7'
+      : tagItem.id.split('_')[0] === 'appliance'
         ? tagColor = '#68D9A4'
-        : tagColor = '#ED6454'
+        : tagColor = '#ED6454';
 
-        // setup structure
-        const elmFrame = document.createElement("div")
-        const elmText = document.createElement("span")
-        const elmIcon = document.createElement("img")
-        elmFrame.setAttribute('class', 'tagFrame')
-        elmFrame.setAttribute('id', tagItem.id)
-        elmFrame.setAttribute('active', true)
-        elmFrame.setAttribute('style', `background-color: ${tagColor}`)
-        elmText.setAttribute('class', 'tagName')
-        elmText.textContent = tagItem.outerText;
-        elmIcon.setAttribute('class', 'tagClose')
-        elmIcon.setAttribute('src', './assets/close.png')
-        elmIcon.setAttribute('alt', "Supprimer l'étiquette")
-        elmFrame.appendChild(elmText)
-        elmFrame.appendChild(elmIcon)
+    // setup structure
+    const elmFrame = document.createElement('div');
+    const elmText = document.createElement('span');
+    const elmIcon = document.createElement('img');
+    elmFrame.setAttribute('class', 'tagFrame');
+    elmFrame.setAttribute('id', tagItem.id);
+    elmFrame.setAttribute('active', true);
+    elmFrame.setAttribute('style', `background-color: ${tagColor}`);
+    elmText.setAttribute('class', 'tagName');
+    elmText.textContent = tagItem.outerText;
+    elmIcon.setAttribute('class', 'tagClose');
+    elmIcon.setAttribute('src', './assets/close.png');
+    elmIcon.setAttribute('alt', "Supprimer l'étiquette");
+    elmFrame.appendChild(elmText);
+    elmFrame.appendChild(elmIcon);
 
-        // remove used tag from menu list
-        tagItem.remove();
-        
-        // add used tag to bar list
-        const target = document.getElementById('tagsList')
-        target.appendChild(elmFrame)
+    // remove used tag from menu list
+    tagItem.remove();
 
-        // reset the eventListener
-        listenTag(tagItem.id)
-    }
+    // add used tag to bar list
+    const target = document.getElementById('tagsList');
+    target.appendChild(elmFrame);
 
-    function callbackTag(tagItem) {
+    // reset the eventListener
+    listenTag(tagItem.id);
+  }
 
-        // set where tag should come back
-        var target = null
-        tagItem.id.split('_')[0] === 'ingredient'
-        ? target = document.getElementById('ingrediantsList')
-        : tagItem.id.split('_')[0] === 'appliance'
+  function callbackTag(tagItem) {
+    // set where tag should come back
+    let target = null;
+    tagItem.id.split('_')[0] === 'ingredient'
+      ? target = document.getElementById('ingrediantsList')
+      : tagItem.id.split('_')[0] === 'appliance'
         ? target = document.getElementById('appliancesList')
-        : target = document.getElementById('utensilsList')
+        : target = document.getElementById('utensilsList');
 
-        // setup structure
-        const elmText = document.createElement("span")
-        elmText.setAttribute('class', 'selectItem')
-        elmText.setAttribute('id', tagItem.id)
-        elmText.setAttribute('active', 'false')
-        elmText.textContent = tagItem.outerText;
+    // setup structure
+    const elmText = document.createElement('span');
+    elmText.setAttribute('class', 'selectItem');
+    elmText.setAttribute('id', tagItem.id);
+    elmText.setAttribute('active', 'false');
+    elmText.textContent = tagItem.outerText;
 
-        // remove used tag from bar list
-        tagItem.remove()
+    // remove used tag from bar list
+    tagItem.remove();
 
-        // add used tag to menu list
-        target.prepend(elmText)
+    // add used tag to menu list
+    target.prepend(elmText);
 
-        // reset the eventListener
-        listenTag(tagItem.id)
-    }
-    
-    menuTags.forEach(tag => {
-        listenTag(tag.id)
-    })
+    // reset the eventListener
+    listenTag(tagItem.id);
+  }
+
+  menuTags.forEach((tag) => {
+    listenTag(tag.id);
+  });
 }

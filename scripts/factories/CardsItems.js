@@ -1,22 +1,21 @@
 export default function CardsItem(filteredRecipes) {
-    const target = document.getElementById('recettesList')
+  const target = document.getElementById('recettesList');
 
-    // Reset existing cards
-    target.innerHTML = ''
+  // Reset existing cards
+  target.innerHTML = '';
 
-    filteredRecipes?.forEach(recipe => {
-
-        // Get all ingredients needed for the recipe
-        const ingredients = []
-        recipe.ingredients.forEach(ingredient => {
-            const unit = ingredient.unit
-            ingredients.push(`
+  filteredRecipes?.forEach((recipe) => {
+    // Get all ingredients needed for the recipe
+    const ingredients = [];
+    recipe.ingredients.forEach((ingredient) => {
+      const { unit } = ingredient;
+      ingredients.push(`
                 <li class="recetteDetailsListItem"><b>${ingredient.ingredient}</b> ${ingredient.quantity}${unit || ''}</li>
-            `)
-        })
+            `);
+    });
 
-        // Setup recipe frame
-        const recipeFrame = `
+    // Setup recipe frame
+    const recipeFrame = `
             <article class="recetteFrame recetteFrameIsInView">
                 <img class="recetteImg" src="./assets/temp_img.png" alt="">
                 <div class="recetteText">
@@ -37,21 +36,21 @@ export default function CardsItem(filteredRecipes) {
                     </div>
                 </div>
             </article>
-        `
+        `;
 
-        if (!filteredRecipes) {target.innerHTML = ''}
+    if (!filteredRecipes) { target.innerHTML = ''; }
 
-        // Add recipeFrame item to the recipesFrame list
-        target.innerHTML += recipeFrame 
-    })
+    // Add recipeFrame item to the recipesFrame list
+    target.innerHTML += recipeFrame;
+  });
 
-    // If no there is no recipes
-    if (filteredRecipes.length === 0) {
-        target.innerHTML += `
+  // If no there is no recipes
+  if (filteredRecipes.length === 0) {
+    target.innerHTML += `
             <p class='emptyRecipes'>
                 Aucune recette ne correspond à votre critère… vous pouvez
                 chercher « tarte aux pommes », « poisson », etc.
             </p>
-        `
-    }
+        `;
+  }
 }
