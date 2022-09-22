@@ -26,7 +26,7 @@ UtensilsItems(recipes)
 TagsItems()
 
 // sort recipe -> true: native, false: functional
-const native = true
+const native = false
 var sortedRecipes = recipes
 
 // filter recipes with tags
