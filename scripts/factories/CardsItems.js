@@ -44,4 +44,14 @@ export default function CardsItem(filteredRecipes) {
         // Add recipeFrame item to the recipesFrame list
         target.innerHTML += recipeFrame 
     })
+
+    // If no there is no recipes
+    if (filteredRecipes.length === 0) {
+        target.innerHTML += `
+            <p class='emptyRecipes'>
+                Aucune recette ne correspond à votre critère… vous pouvez
+                chercher « tarte aux pommes », « poisson », etc.
+            </p>
+        `
+    }
 }

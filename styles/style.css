@@ -308,3 +308,8 @@ section {
     overflow: hidden;
     font-family: 'Roboto';
 }
+
+.emptyRecipes {
+    font-size: 18px;
+    padding: 0 20px;
+}
