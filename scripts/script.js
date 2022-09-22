@@ -25,8 +25,8 @@ UtensilsItems(recipes)
 // add tags event
 TagsItems()
 
-// sort recipe
-const native = false
+// sort recipe -> true: native, false: functional
+const native = true
 var sortedRecipes = recipes
 
 // filter recipes with tags

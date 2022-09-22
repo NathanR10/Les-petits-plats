@@ -3,13 +3,20 @@ export default function functionalSorter(searchInputValue, recipes) {
 
     recipes.forEach(recipe => {
 
+        // regroup all ingredients for one recipe
         let ingredients = []
         recipe.ingredients.forEach(ingredient => {
             ingredients.push(ingredient.ingredient.toLowerCase())
         });
 
+        // regroup all ustensils for one recipe
+        const ustensils = []
+        recipe.ustensils.forEach(ustensil => {
+            ustensils.push(ustensil.toLowerCase())
+        });
+
         // setup our targets
-        const targetName = [recipe.name.toLowerCase(), ...ingredients, recipe.description.toLowerCase()]
+        const targetName = [recipe.name.toLowerCase(), ...ingredients, ...ustensils, recipe.description.toLowerCase(), recipe.appliance.toLowerCase()]
         const searchString = searchInputValue.toLowerCase()
 
         // search for matches between search & targets
