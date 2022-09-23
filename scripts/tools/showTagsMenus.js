@@ -39,7 +39,7 @@ export default function showTagsMenu() {
         inputTarget.addEventListener('input', () => {
           let search = inputTarget.value.toLowerCase();
           search = search.charAt(0).toUpperCase() + search.slice(1);
-          const childs = Array.from(target.lastElementChild.children);
+          let childs = Array.from(target.lastElementChild.children);
           childs.forEach((child) => {
             if (!child.innerText.includes(search) && search) {
               child.style.display = 'none';
@@ -67,6 +67,12 @@ export default function showTagsMenu() {
         targetDOM.style.maxHeight = 'unset';
         target.lastElementChild.style.overflowY = 'hidden';
         target.lastElementChild.style.display = 'none';
+
+        // Reset tag visibility
+        let childs = Array.from(target.lastElementChild.children);
+        childs.forEach((child) => {
+          child.style.display = 'flex';
+        });
       }
     });
   });
