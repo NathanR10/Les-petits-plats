@@ -38,10 +38,9 @@ export default function showTagsMenu() {
         const inputTarget = this.document.getElementById(target.firstElementChild.id);
         inputTarget.addEventListener('input', () => {
           let search = inputTarget.value.toLowerCase();
-          search = search.charAt(0).toUpperCase() + search.slice(1); // TODO
           let childs = Array.from(target.lastElementChild.children);
           childs.forEach((child) => {
-            if (!child.innerText.includes(search) && search) {
+            if (!child.innerText.toLowerCase().includes(search) && search) {
               child.style.display = 'none';
             } else {
               child.style.display = 'flex';
