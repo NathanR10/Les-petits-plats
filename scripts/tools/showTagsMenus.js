@@ -3,7 +3,7 @@ export default function showTagsMenu() {
   const targets = document.querySelectorAll('.selectInputFrame');
 
   // Listen for a click for open|close targeted menu
-  window.addEventListener('click', function (e) {
+  window.addEventListener('click', (e) => {
     targets.forEach((target) => {
       const genPlaceholder = () => {
         if (target.id === 'ingredientsSelect') {
@@ -37,8 +37,8 @@ export default function showTagsMenu() {
         // setup search to the input
         const inputTarget = this.document.getElementById(target.firstElementChild.id);
         inputTarget.addEventListener('input', () => {
-          let search = inputTarget.value.toLowerCase();
-          let childs = Array.from(target.lastElementChild.children);
+          const search = inputTarget.value.toLowerCase();
+          const childs = Array.from(target.lastElementChild.children);
           childs.forEach((child) => {
             if (!child.innerText.toLowerCase().includes(search) && search) {
               child.style.display = 'none';
@@ -68,7 +68,7 @@ export default function showTagsMenu() {
         target.lastElementChild.style.display = 'none';
 
         // Reset tag visibility
-        let childs = Array.from(target.lastElementChild.children);
+        const childs = Array.from(target.lastElementChild.children);
         childs.forEach((child) => {
           child.style.display = 'flex';
         });

@@ -1,10 +1,10 @@
 export default function IngredientsItems(recipes) {
   const target = document.getElementById('ingrediantsList');
-  var activeTags = document.querySelectorAll('.tagFrame');
+  let activeTags = document.querySelectorAll('.tagFrame');
   activeTags = Array.from(activeTags);
-  var activeTagsString = [];
-  activeTags.forEach(activeTags => {
-    activeTagsString.push(activeTags.childNodes[0].innerHTML.toLowerCase());
+  const activeTagsString = [];
+  activeTags.forEach((activeTag) => {
+    activeTagsString.push(activeTag.childNodes[0].innerHTML.toLowerCase());
   });
 
   // Reset existing cards
@@ -14,7 +14,8 @@ export default function IngredientsItems(recipes) {
 
   recipes.forEach((recipe) => {
     recipe.ingredients.forEach((ingredient) => {
-      if (!allIngredientsName.includes(ingredient.ingredient) && !activeTagsString.includes(ingredient.ingredient.toLowerCase())) {
+      if (!allIngredientsName.includes(ingredient.ingredient)
+      && !activeTagsString.includes(ingredient.ingredient.toLowerCase())) {
         allIngredientsName.push(ingredient.ingredient);
       }
     });
