@@ -1,9 +1,10 @@
+/* eslint-disable func-names */
 /* eslint-disable no-param-reassign */
 export default function showTagsMenu() {
   const targets = document.querySelectorAll('.selectInputFrame');
 
   // Listen for a click for open|close targeted menu
-  window.addEventListener('click', (e) => {
+  window.addEventListener('click', function (e) {
     targets.forEach((target) => {
       const genPlaceholder = () => {
         if (target.id === 'ingredientsSelect') {
