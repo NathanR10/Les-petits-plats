@@ -1,15 +1,15 @@
 export default function UtensilsItems(recipes) {
   const target = document.getElementById('utensilsList');
-  var activeTags = document.querySelectorAll('.tagFrame');
+  let activeTags = document.querySelectorAll('.tagFrame');
   activeTags = Array.from(activeTags);
-  var activeTagsString = [];
-  activeTags.forEach(activeTags => {
-    activeTagsString.push(activeTags.childNodes[0].innerHTML.toLowerCase());
+  const activeTagsString = [];
+  activeTags.forEach((activeTag) => {
+    activeTagsString.push(activeTag.childNodes[0].innerHTML.toLowerCase());
   });
 
   // Reset existing cards
   target.innerHTML = '';
-  
+
   const allUtensilsName = [];
 
   recipes.forEach((recipe) => {

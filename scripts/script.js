@@ -42,7 +42,7 @@ export function filter(action) {
     IngredientsItems(sortedRecipes);
     AppliancesItems(sortedRecipes);
     UtensilsItems(sortedRecipes);
-    
+
     // refresh tags event
     TagsItems();
 
@@ -59,7 +59,7 @@ export function filter(action) {
     IngredientsItems(matchingRecipes);
     AppliancesItems(matchingRecipes);
     UtensilsItems(matchingRecipes);
-    
+
     // refresh tags event
     TagsItems();
 
