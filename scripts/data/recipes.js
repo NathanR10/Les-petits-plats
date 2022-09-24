@@ -21,7 +21,7 @@ export const recipes = [
       },
       {
         ingredient: 'Sucre',
-        quantite: 30,
+        quantity: 30,
         unit: 'grammes',
       },
       {
@@ -1378,7 +1378,7 @@ export const recipes = [
         unit: 'Litres',
       },
       {
-        ingredient: 'Citron Vert',
+        ingredient: 'Citron vert',
         quantity: 3,
       },
       {

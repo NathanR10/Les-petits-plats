@@ -7,22 +7,17 @@ import { filter } from '../script.js';
 export default function TagsItems() {
   const menuTags = document.querySelectorAll('.selectItem');
 
-  function listenTag(target) {
-    const tagItem = document.getElementById(target);
+  function listenTag(tagItem) {
     tagItem.addEventListener('click', () => {
       if (tagItem.attributes.active.value === 'true') {
         tagItem.attributes.active.value = 'false';
         callbackTag(tagItem);
-
-        // refresh tags
-        filter('click');
       } else {
         tagItem.attributes.active.value = 'true';
         pushTag(tagItem);
-
-        // refresh tags
-        filter('click');
       }
+      // refresh tags
+      filter('click');
     });
   }
 
@@ -59,7 +54,7 @@ export default function TagsItems() {
     target.appendChild(elmFrame);
 
     // reset the eventListener
-    listenTag(tagItem.id);
+    listenTag(elmFrame);
   }
 
   function callbackTag(tagItem) {
@@ -76,7 +71,7 @@ export default function TagsItems() {
     elmText.setAttribute('class', 'selectItem');
     elmText.setAttribute('id', tagItem.id);
     elmText.setAttribute('active', 'false');
-    elmText.textContent = tagItem.outerText;
+    elmText.textContent = tagItem.innerText;
 
     // remove used tag from bar list
     tagItem.remove();
@@ -85,10 +80,10 @@ export default function TagsItems() {
     target.prepend(elmText);
 
     // reset the eventListener
-    listenTag(tagItem.id);
+    listenTag(tagItem);
   }
 
   menuTags.forEach((tag) => {
-    listenTag(tag.id);
+    listenTag(tag);
   });
 }

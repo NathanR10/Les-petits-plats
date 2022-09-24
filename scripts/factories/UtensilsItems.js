@@ -1,9 +1,20 @@
 export default function UtensilsItems(recipes) {
+  const target = document.getElementById('utensilsList');
+  var activeTags = document.querySelectorAll('.tagFrame');
+  activeTags = Array.from(activeTags);
+  var activeTagsString = [];
+  activeTags.forEach(activeTags => {
+    activeTagsString.push(activeTags.childNodes[0].innerHTML.toLowerCase());
+  });
+
+  // Reset existing cards
+  target.innerHTML = '';
+  
   const allUtensilsName = [];
 
   recipes.forEach((recipe) => {
     recipe.ustensils.forEach((utensil) => {
-      if (!allUtensilsName.includes(utensil)) {
+      if (!allUtensilsName.includes(utensil) && !activeTagsString.includes(utensil)) {
         allUtensilsName.push(utensil);
       }
     });
@@ -15,7 +26,6 @@ export default function UtensilsItems(recipes) {
     const ingrediantsFrame = `
             <span class="selectItem" id="ustensil_${index}" active="false">${name}</span>
         `;
-    const target = document.getElementById('utensilsList');
     target.innerHTML += ingrediantsFrame;
   });
 }

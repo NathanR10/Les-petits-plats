@@ -17,18 +17,6 @@ import tagsSorter from './tools/tagsSorter.js';
 // open|close tags menus
 showTagsMenu(recipes);
 
-// gen all Ingredients tags
-IngredientsItems(recipes);
-
-// gen all Appliances tags
-AppliancesItems(recipes);
-
-// gen all Utensils tags
-UtensilsItems(recipes);
-
-// add tags event
-TagsItems();
-
 // sort recipe -> true: native, false: functional
 const native = false;
 let sortedRecipes = recipes;
@@ -50,23 +38,30 @@ export function filter(action) {
       ? sortedRecipes = nativeSorter(inputValue, matchingRecipes)
       : sortedRecipes = functionalSorter(inputValue, matchingRecipes);
 
-    // gen all recipe cards
+    // refresh all Ingredients, Appliances & Utensils tags
+    IngredientsItems(sortedRecipes);
+    AppliancesItems(sortedRecipes);
+    UtensilsItems(sortedRecipes);
+    
+    // refresh tags event
+    TagsItems();
+
+    // refresh all recipe cards
     CardsItems(sortedRecipes);
 
     // add scroll effect to cards
     cardScroll();
-  } else if (action === 'click') {
+  } else if (action === 'click' || sortedRecipes !== recipes) {
     // reset recipes
     sortedRecipes = recipes;
 
-    // gen all recipe cards
-    CardsItems(matchingRecipes);
-
-    // add scroll effect to cards
-    cardScroll();
-  } else if (sortedRecipes !== recipes) {
-    // reset recipes
-    sortedRecipes = recipes;
+    // refresh all Ingredients, Appliances & Utensils tags
+    IngredientsItems(matchingRecipes);
+    AppliancesItems(matchingRecipes);
+    UtensilsItems(matchingRecipes);
+    
+    // refresh tags event
+    TagsItems();
 
     // gen all recipe cards
     CardsItems(matchingRecipes);
@@ -80,6 +75,14 @@ const searchInput = document.getElementById('searchBar');
 searchInput.addEventListener('input', () => {
   filter();
 });
+
+// gen all Ingredients, Appliances & Utensils tags
+IngredientsItems(sortedRecipes);
+AppliancesItems(sortedRecipes);
+UtensilsItems(sortedRecipes);
+
+// add tags event
+TagsItems();
 
 // gen all recipe cards
 CardsItems(sortedRecipes);

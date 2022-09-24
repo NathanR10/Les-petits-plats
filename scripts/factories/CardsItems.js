@@ -10,7 +10,7 @@ export default function CardsItem(filteredRecipes) {
     recipe.ingredients.forEach((ingredient) => {
       const { unit } = ingredient;
       ingredients.push(`
-                <li class="recetteDetailsListItem"><b>${ingredient.ingredient}</b> ${ingredient.quantity}${unit || ''}</li>
+                <li class="recetteDetailsListItem"><b>${ingredient.ingredient}</b> ${ingredient.quantity} ${unit || ''}</li>
             `);
     });
 
