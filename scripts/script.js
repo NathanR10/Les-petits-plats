@@ -18,7 +18,7 @@ import tagsSorter from './tools/tagsSorter.js';
 showTagsMenu(recipes);
 
 // sort recipe -> true: native, false: functional
-const native = false;
+const native = true;
 let sortedRecipes = recipes;
 
 // filter recipes with tags
