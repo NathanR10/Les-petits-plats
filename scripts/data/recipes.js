@@ -26,6 +26,7 @@ export const recipes = [
       },
       {
         ingredient: 'Glaçons',
+        quantity: '',
       },
     ],
     time: 10,
@@ -306,6 +307,7 @@ export const recipes = [
       },
       {
         ingredient: 'Olives',
+        quantity: '',
       },
       {
         ingredient: 'Fromage de chèvre',
@@ -314,12 +316,15 @@ export const recipes = [
       },
       {
         ingredient: 'Vinaigre Balsamic',
+        quantity: '',
       },
       {
         ingredient: "Huile d'olive",
+        quantity: '',
       },
       {
         ingredient: 'Basilic',
+        quantity: '',
       },
     ],
     time: 15,
@@ -605,6 +610,7 @@ export const recipes = [
       },
       {
         ingredient: 'Menthe',
+        quantity: '',
       },
     ],
     time: 15,
@@ -910,6 +916,7 @@ export const recipes = [
       },
       {
         ingredient: "Huile d'olives",
+        quantity: '',
       },
       {
         ingredient: 'Oignon',
@@ -1016,9 +1023,11 @@ export const recipes = [
       },
       {
         ingredient: "Huile d'olive",
+        quantity: '',
       },
       {
         ingredient: 'Paprika',
+        quantity: '',
       },
     ],
     time: 30,
@@ -1178,6 +1187,7 @@ export const recipes = [
       },
       {
         ingredient: "Huile d'olive",
+        quantity: '',
       },
       {
         ingredient: 'Orange',
@@ -1477,6 +1487,7 @@ export const recipes = [
       },
       {
         ingredient: 'Citron',
+        quantity: '',
       },
     ],
     time: 50,
